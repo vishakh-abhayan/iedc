@@ -1,10 +1,3 @@
-/**
-* Template Name: Bikin - v4.7.0
-* Template URL: https://bootstrapmade.com/bikin-free-simple-landing-page-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -337,7 +330,7 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 .alert {
   padding: 20px;
-  background-color: #f44336;
+  background-color: #e7736b;
   color: white;
 }
 
@@ -574,41 +567,42 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Steps
+# events
 --------------------------------------------------------------*/
-.steps {
+.events {
   padding-top: 20px;
 }
-.steps .row {
+.events .row {
   overflow: hidden;
 }
-.steps .content-item {
+.events .content-item {
   padding: 40px;
   border-left: 1px solid #eee;
   border-bottom: 1px solid #eee;
   margin: -1px;
 }
-.steps .content-item span {
+.events .content-item span {
   display: block;
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 600;
   color: #466393;
 }
-.steps .content-item h4 {
+.events .content-item h4 {
   font-size: 28px;
   font-weight: 400;
   padding: 0;
   margin: 20px 0;
   color: #2d405f;
 }
-.steps .content-item p {
+.events .content-item p {
   color: #aaaaaa;
   font-size: 15px;
+  font-weight: 200;
   margin: 0;
   padding: 0;
 }
 @media (max-width: 768px) {
-  .steps .content-item {
+  .events .content-item {
     padding: 40px 0;
   }
 }
@@ -927,6 +921,7 @@ section {
 .team .member .member-info-content h4 {
   font-weight: 700;
   margin-bottom: 2px;
+  font-weight: 400;
   font-size: 18px;
   color: #fff;
 }
@@ -1120,6 +1115,167 @@ section {
   transition: 0.6s;
 }
 
+/* sub hero */
+#subhero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: url("../img/subhero-bgno.jpg") top center; 
+  background-size: cover;
+  position: relative;
+}
+
+#subhero:before {
+  content: "";
+  background: #fcfcfc;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#subhero .container {
+  padding-top: 0;
+}
+
+#subhero h1 {
+  margin: 0;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 72px;
+  color: #373833;
+  font-family: 'Playfair display', sans-serif;}
+
+#subhero h2 {
+  color: #5e5e5e;
+  margin: 10px 0 0 0;
+  font-size: 22px;
+}
+
+#subhero .btn-get-started {
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  padding: 14px 50px;
+  border-radius: 5px;
+  transition: 0.5s;
+  margin-top: 30px;
+  color: #fff;
+  background: #fa2742;
+}
+
+#subhero .btn-get-started:hover {
+  background: #f81634;
+}
+
+#subhero .icon-boxes {
+  margin-top: 10px;
+}
+
+#subhero .icon-box {
+  padding: 50px 30px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 29px 0 rgba(18, 66, 101, 0.08);
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+#subhero .icon-box .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+#subhero .icon-box .title a {
+  color: #373833;
+  transition: 0.3s;
+}
+
+#subhero .icon-box .description {
+  font-size: 15px;
+  line-height: 28px;
+  margin-bottom: 0;
+}
+
+#subhero .icon-box .icon {
+  margin-bottom: 20px;
+  padding-top: 10px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  font-size: 36px;
+  line-height: 1;
+  color: #fa2742;
+}
+
+#subhero .icon-box:hover {
+  transform: scale(1.08);
+}
+
+#subhero .icon-box:hover .title a {
+  color: #fa2742;
+}
+
+
+#subhero .logo a {
+  color: #7b1616;
+}
+
+#subhero .logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 992px) {
+  #subhero .logo {
+    font-size: 28px;
+  }
+}
+@media (min-width: 1024px) {
+  #subhero {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-height: 800px) {
+  #subhero {
+    height: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  #subhero {
+    height: auto;
+  }
+  #subhero h1 {
+    font-size: 48px;
+    line-height: 48px;
+  }
+  #subhero h2 {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
+/*-------------------------------------------------------------
+Button
+--------------------------------------------------------------*/
+.Buy .btn{
+  background: #061c3e;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 5px;
+}
+.Buy .btn:hover {
+  background: #0a22f6;
+}
+
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
@@ -1212,7 +1368,7 @@ section {
   border-radius: 5px;
 }
 .contact .email-form button[type=submit]:hover {
-  background: #0a22f6;
+  background: #314462;
 }
 @-webkit-keyframes animate-loading {
   0% {
@@ -1405,5 +1561,58 @@ section {
 .events-img{
   width: 88%;
   height: 77%;
+}
+/*--------------------------------------------------------------
+# Cta
+--------------------------------------------------------------*/
+.cta {
+  background: linear-gradient(rgba(40, 58, 90, 0.9), rgba(40, 58, 90, 0.9)), url("../img/cta.png") fixed center center;
+  background-size: cover;
+  padding: 120px 40px;
+  position: relative;
+}
+
+.cta h3 {
+  font-weight: 700;
+  font-size: 34px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.cta p {
+  color: #fff;
+}
+
+.cta .cta-btn {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 40px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.cta .cta-btn:hover {
+  background: #0099ff;
+  border: 2px solid #0099ff;
+}
+
+@media (max-width: 1024px) {
+  .cta {
+    background-attachment: scroll;
+  }
+}
+
+@media (min-width: 769px) {
+  .cta .cta-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
 }
 
