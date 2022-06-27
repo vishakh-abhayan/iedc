@@ -19,7 +19,6 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Poppins", sans-serif;
 }
-
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -460,6 +459,7 @@ section {
 .about {
   background: #466393;
   background-size: cover;
+  background: url("../img/about-bg.png") top center no-repeat;
   padding: 60px 0;
   position: relative;
   color: #fff;
@@ -605,6 +605,89 @@ section {
   .events .content-item {
     padding: 40px 0;
   }
+}/*--------------------------------------------------------------
+# Testimonials
+--------------------------------------------------------------*/
+.testimonials .testimonial-item {
+  box-sizing: content-box;
+  text-align: center;
+  min-height: 320px;
+}
+
+.testimonials .testimonial-item .testimonial-img {
+  width: 90px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.testimonials .testimonial-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+  color: #111;
+}
+
+.testimonials .testimonial-item h4 {
+  font-size: 14px;
+  color: #999;
+  margin: 0;
+}
+
+.testimonials .testimonial-item .quote-icon-left, .testimonials .testimonial-item .quote-icon-right {
+  color: #466393;
+  font-size: 26px;
+}
+
+.testimonials .testimonial-item .quote-icon-left {
+  display: inline-block;
+  left: -5px;
+  position: relative;
+}
+
+.testimonials .testimonial-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+}
+
+.testimonials .testimonial-item p {
+  font-style: italic;
+  margin: 0 15px 15px 15px;
+  padding: 20px;
+  background: #f8f8fe;
+  position: relative;
+  margin-bottom: 35px;
+  border-radius: 6px;
+}
+
+.testimonials .testimonial-item p::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 20px solid #f8f8fe;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  position: absolute;
+  bottom: -20px;
+  left: calc(50% - 20px);
+}
+
+.testimonials .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #466393;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #466393;
 }
 
 /*--------------------------------------------------------------
@@ -821,73 +904,224 @@ section {
 .portfolio-details .portfolio-description p {
   padding: 0;
 }
-
 /*--------------------------------------------------------------
-# Testimonials
+# carousal
 --------------------------------------------------------------*/
-.testimonials .testimonials-carousel, .testimonials .testimonials-slider {
-  overflow: hidden;
+.carousal .carousal-item {
+  margin-bottom: 30px;
 }
-.testimonials .testimonial-item {
-  box-sizing: content-box;
-  padding: 30px 30px 0 30px;
-  margin: 30px 15px;
+
+.carousal #carousal-flters {
+  padding: 0;
+  margin: 0 auto 35px auto;
+  list-style: none;
   text-align: center;
-  min-height: 350px;
-  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
-  background: #fff;
+  border-radius: 50px;
+  padding: 2px 15px;
 }
-.testimonials .testimonial-item .testimonial-img {
-  width: 90px;
-  border-radius: 50%;
-  border: 4px solid #fff;
-  margin: 0 auto;
-}
-.testimonials .testimonial-item h3 {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 10px 0 5px 0;
-  color: #111;
-}
-.testimonials .testimonial-item h4 {
+
+.carousal #carousal-flters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 15px 8px 15px;
   font-size: 14px;
-  color: #999;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #373833;
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.carousal #carousal-flters li:hover, .carousal #carousal-flters li.filter-active {
+  color: #fa2742;
+}
+
+.carousal #carousal-flters li:last-child {
+  margin-right: 0;
+}
+
+.carousal .carousal-wrap {
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.carousal .carousal-wrap::before {
+  content: "";
+  background: rgba(36, 135, 206, 0.6);
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  top: 30px;
+  bottom: 30px;
+  transition: all ease-in-out 0.3s;
+  z-index: 2;
+  opacity: 0;
+}
+
+.carousal .carousal-wrap .carousal-info {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousal .carousal-wrap .carousal-info::before {
+  display: block;
+  content: "";
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  border-top: 3px solid #fff;
+  border-left: 3px solid #fff;
+  transition: all 0.5s ease 0s;
+  z-index: 9994;
+}
+
+.carousal .carousal-wrap .carousal-info::after {
+  display: block;
+  content: "";
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  bottom: 35px;
+  right: 35px;
+  border-bottom: 3px solid #fff;
+  border-right: 3px solid #fff;
+  transition: all 0.5s ease 0s;
+  z-index: 9994;
+}
+
+.carousal .carousal-wrap .carousal-info h4 {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.carousal .carousal-wrap .carousal-info p {
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 0;
   margin: 0;
 }
-.testimonials .testimonial-item .quote-icon-left, .testimonials .testimonial-item .quote-icon-right {
-  color: white;
-  font-size: 26px;
+
+.carousal .carousal-wrap .carousal-links {
+  text-align: center;
+  z-index: 4;
 }
-.testimonials .testimonial-item .quote-icon-left {
+
+.carousal .carousal-wrap .carousal-links a {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 2px;
+  font-size: 28px;
   display: inline-block;
-  left: -5px;
-  position: relative;
+  transition: 0.3s;
 }
-.testimonials .testimonial-item .quote-icon-right {
-  display: inline-block;
-  right: -5px;
-  position: relative;
-  top: 10px;
+
+.carousal .carousal-wrap .carousal-links a:hover {
+  color: #fff;
 }
-.testimonials .testimonial-item p {
-  font-style: italic;
-  margin: 0 auto 15px auto;
+
+.carousal .carousal-wrap:hover::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
 }
-.testimonials .swiper-pagination {
+
+.carousal .carousal-wrap:hover .carousal-info {
+  opacity: 1;
+}
+
+.carousal .carousal-wrap:hover .carousal-info::before {
+  top: 15px;
+  left: 15px;
+}
+
+.carousal .carousal-wrap:hover .carousal-info::after {
+  bottom: 15px;
+  right: 15px;
+}
+
+/*--------------------------------------------------------------
+# carousal Details
+--------------------------------------------------------------*/
+.carousal-details {
+  padding-top: 40px;
+}
+
+.carousal-details .carousal-details-slider img {
+  width: 100%;
+}
+
+.carousal-details .carousal-details-slider .swiper-pagination {
   margin-top: 20px;
   position: relative;
 }
-.testimonials .swiper-pagination .swiper-pagination-bullet {
+
+.carousal-details .carousal-details-slider .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #466393;
-}
-.testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #466393;
+  border: 1px solid #fa2742;
 }
 
+.carousal-details .carousal-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #fa2742;
+}
+
+.carousal-details .carousal-info {
+  padding: 30px;
+  box-shadow: 0px 0 30px rgba(18, 66, 101, 0.08);
+}
+
+.carousal-details .carousal-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.carousal-details .carousal-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+.carousal-details .carousal-info ul li + li {
+  margin-top: 10px;
+}
+
+.carousal-details .carousal-description {
+  padding-top: 30px;
+}
+
+.carousal-details .carousal-description h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.carousal-details .carousal-description p {
+  padding: 0;
+}
 /*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
@@ -896,168 +1130,71 @@ section {
   padding: 60px 0;
 }
 .team .member {
-  text-align: center;
   margin-bottom: 20px;
-  background: #343a40;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+.team .member .member-img {
   position: relative;
   overflow: hidden;
-}
-.team .member .member-info {
-  opacity: 0;
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  transition: 0.2s;
-}
-.team .member .member-info-content {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 10px;
-  transition: bottom 0.4s;
-}
-.team .member .member-info-content h4 {
-  font-weight: 700;
-  margin-bottom: 2px;
-  font-weight: 400;
-  font-size: 18px;
-  color: #fff;
-}
-.team .member .member-info-content span {
-  font-style: italic;
-  display: block;
-  font-size: 13px;
-  color: #fff;
 }
 .team .member .social {
   position: absolute;
   left: 0;
-  bottom: -38px;
+  bottom: 30px;
   right: 0;
-  height: 48px;
-  transition: bottom ease-in-out 0.4s;
-  text-align: center;
+  opacity: 0;
+  transition: ease-in-out 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .team .member .social a {
   transition: color 0.3s;
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0 10px;
-  display: inline-block;
+  margin: 0 3px;
+  border-radius: 50px;
+  width: 36px;
+  height: 36px;
+  background: rgba(239, 102, 3, 0.8);
+  transition: ease-in-out 0.3s;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .team .member .social a:hover {
-  color: #fff;
+  background: #fc8129;
 }
 .team .member .social i {
   font-size: 18px;
-  margin: 0 2px;
+  line-height: 0;
 }
-.team .member:hover .member-info {
-  background: linear-gradient(0deg, rgba(12, 17, 26, 0.9) 0%, rgba(20, 29, 43, 0.8) 20%, rgba(0, 212, 255, 0) 100%);
-  opacity: 1;
-  transition: 0.4s;
+.team .member .member-info {
+  padding: 25px 15px;
 }
-.team .member:hover .member-info-content {
-  bottom: 60px;
-  transition: bottom 0.4s;
+.team .member .member-info h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #2a2c39;
+}
+.team .member .member-info span {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: #aaaaaa;
+}
+.team .member .member-info p {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 26px;
+  color: #777777;
 }
 .team .member:hover .social {
-  bottom: 0;
-  transition: bottom ease-in-out 0.4s;
-}
-
-/*--------------------------------------------------------------
-# Pricing
---------------------------------------------------------------*/
-.pricing .box {
-  padding: 20px;
-  background: #fff;
-  text-align: center;
-  border-radius: 8px;
-  position: relative;
-  overflow: hidden;
-}
-.pricing .box h3 {
-  font-weight: 400;
-  padding: 15px;
-  font-size: 18px;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: #2d405f;
-}
-.pricing .box h4 {
-  font-size: 42px;
-  color: #466393;
-  font-weight: 500;
-  font-family: "Poppins", sans-serif;
-  margin-bottom: 20px;
-}
-.pricing .box h4 sup {
-  font-size: 20px;
-  top: -15px;
-  left: -3px;
-}
-.pricing .box h4 span {
-  color: #bababa;
-  font-size: 16px;
-  font-weight: 300;
-}
-.pricing .box ul {
-  padding: 0;
-  list-style: none;
-  color: #2d405f;
-  text-align: center;
-  line-height: 20px;
-  font-size: 14px;
-}
-.pricing .box ul li {
-  padding-bottom: 16px;
-}
-.pricing .box ul i {
-  color: #466393;
-  font-size: 18px;
-  padding-right: 4px;
-}
-.pricing .box ul .na {
-  color: #ccc;
-  text-decoration: line-through;
-}
-.pricing .box .btn-wrap {
-  padding: 15px;
-  text-align: center;
-}
-.pricing .box .btn-buy {
-  background: #eceefe;
-  color: #466393;
-  display: inline-block;
-  padding: 10px 40px 12px 40px;
-  border-radius: 5px;
-  transition: none;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  transition: 0.3s;
-}
-.pricing .box .btn-buy:hover {
-  background: #466393;
-  color: #fff;
-}
-.pricing .featured {
-  background: #466393;
-  box-shadow: none;
-}
-.pricing .featured h3, .pricing .featured h4, .pricing .featured h4 span, .pricing .featured ul, .pricing .featured ul .na {
-  color: #fff;
-}
-.pricing .featured .btn-buy {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-}
-.pricing .featured .btn-buy:hover {
-  background: #fff;
-  color: #4e6fa4;
+  opacity: 1;
+  bottom: 15px;
 }
 
 /*--------------------------------------------------------------
@@ -1164,7 +1301,7 @@ section {
   transition: 0.5s;
   margin-top: 30px;
   color: #fff;
-  background: #fa2742;
+  background: #466393;
 }
 
 #subhero .btn-get-started:hover {
@@ -1210,7 +1347,7 @@ section {
   transition: all 0.3s ease-in-out;
   font-size: 36px;
   line-height: 1;
-  color: #fa2742;
+  color: #466393;
 }
 
 #subhero .icon-box:hover {
@@ -1218,7 +1355,7 @@ section {
 }
 
 #subhero .icon-box:hover .title a {
-  color: #fa2742;
+  color: #466393;
 }
 
 
